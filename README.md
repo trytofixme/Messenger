@@ -1,5 +1,6 @@
 # Messenger
 Back-end : flask
+
 Front-end : QtCreator
 # Инструкция по разворачиванию приложения
 * Активируем виртуальную среду:
@@ -25,24 +26,32 @@ Running on http://127.0.0.1:5000/
 ### Статус
 1. URL : http://127.0.0.1:5000/status
 2. request : GET
-3. Body: {
+3. Body: 
+```
+{
   "Count of messages", # Количество сообщений на сервере, int
   "Time on server", # Время на сервере, YYYY-MM-DD HH:MM:SS
   "server_name", # Имя сервера, строка
   "status" # Работает ли сервер, boolean
 }
+```
 ### Посланные сообщения
 1. URL : http://127.0.0.1:5000/send_message
 2. request : GET, POST
-3. Body: {
+3. Body: 
+```
+{
     "wait for you": "please, send a message"
 }
+```
 Необходим для занесения сообщений в базу данных, поэтому на самой странице нет ничего информативного
 
 ### Полученные сообщения
 1. URL : http://127.0.0.1:5000/get_messages
 2. request : GET
-3. Body : {
+3. Body : 
+```
+{
   messages: [
     {
       author, # Имя автора, строка
@@ -51,3 +60,4 @@ Running on http://127.0.0.1:5000/
     },    
   ]
 }
+```
