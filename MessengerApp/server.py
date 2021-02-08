@@ -14,7 +14,7 @@ def main_page():
            "<br><a href='/status'>Статус</a>" \
            "<br><a href='/send_message'>Посланные сообщения</a>" \
            "<br><a href='/get_messages'>Полученные сообщения</a>" \
-           "<br><a href='/user/{}'>Случайный пользователь </a><br><a href='/books/<genre>'>books</a>".format(random.randint(1, 100000))\
+           "<br><a href='/user/{}'>Случайный пользователь </a>".format(random.randint(1, 100000))\
 
 
 
@@ -29,14 +29,6 @@ def set_cookie():
 @app.route('/transfer')
 def transfer():
     return redirect("https://localhost:5000/login", code=301)
-
-
-@app.route('/books/<genre>')
-def books(genre):
-    res = make_response("All Books in {} category".format(genre))
-    res.headers['Content-Type'] = 'text/markdown'
-    res.headers['Server'] = 'Foobar'
-    return res
 
 
 @app.route('/user/<user_id>/')
