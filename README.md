@@ -62,3 +62,10 @@ Running on http://127.0.0.1:5000/
   ]
 }
 ```
+### Случайный пользователь 
+1. URL : http://127.0.0.1:5000/user/59565/
+2. request : GET
+3. Body : 
+```
+Profile page of user #[user_id]
+```
